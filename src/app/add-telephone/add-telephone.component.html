@@ -1,0 +1,36 @@
+<div class="container">
+<div>
+<h2>Ajouter un Téléphone:</h2>
+</div>
+<form >
+
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >Nom Téléphone</label>
+  <input type="text"[(ngModel)]="newtelephone.nomTelephone" name="nomtele" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >societe</label>
+  <input type="text"[(ngModel)]="newtelephone.societe"name="societe" class="form-control">
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-2">
+  <label >Prix</label>
+  <input type="number"[(ngModel)]="newtelephone.prixTelephone" name="prixtele" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >Date création</label>
+  <input type="date"[(ngModel)]="newtelephone.dateCreation" name="datecreation" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>type</label>
+    <select class="form-control form-control-lg" id="idtype" name="idtype"
+    [(ngModel)]="newIdTel">
+    <option *ngFor="let type of types" [value]="type.idType" >
+    {{type.nomtype}}
+    </option>
+    </select>
+    </div>
+  <div class="mt-2">
+  <button type="submit" (click)="addTelephone()"class="btn btn-success" routerLink="/Mestelephone">Ajouter</button>
+  </div>
+  </form>
+</div>

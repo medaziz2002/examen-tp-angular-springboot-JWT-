@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Nom Telephone en tapant</label>
+    <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+    </div>
+    </form>
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom</th> <th>societe</th> <th>prix
+    </th><th>date de création</th><th>Catégorie</th> </tr>
+    </thead>
+    <tbody *ngFor="let tele of telephones" filter:nomtelephone >
+      <tr>
+        <td>{{tele.idTelephone}}</td>
+        <td>{{tele.nomTelephone}}</td>
+        <td>{{tele.societe}}</td>
+        <td>{{tele.prixTelephone}}</td>
+        <td>{{tele.dateCreation | date:'dd/MM/yyyy'}}</td>
+        <td>{{tele.type.nomtype}}</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</div>

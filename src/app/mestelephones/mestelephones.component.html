@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="card shadow mb-4">
+  <div class="card-body">
+  <table class="table table-striped">
+  <thead>
+
+  </thead>
+  <tr>
+    <th>ID</th>
+    <th>NOM</th>
+    <th>SOCIETE</th>
+    <th>PRIX</th>
+    <th>DATE DE CREATION</th>
+    <th>Type </th>
+  </tr>
+  <tbody *ngFor="let compteur of telephone">
+  <tr >
+  <td>{{compteur.idTelephone}}</td>
+  <td>{{compteur.nomTelephone}}</td>
+  <td>{{compteur.societe}}</td>
+  <td>{{compteur.prixTelephone}}</td>
+  <td>{{compteur.dateCreation | date:'dd/MM/yyyy'}} </td>
+  <td>{{compteur.type.nomtype}}</td>
+  <td><a *ngIf="AuthService.isAdmin()" class="btn btn-success" [routerLink]="['/update-telephone',compteur.idTelephone]">Modifier</a></td>
+  <td><a *ngIf="AuthService.isAdmin()" class="btn btn-danger" (click)="supprimertelephone(compteur)">Supprimer</a></td>
+  </tr>
+  </tbody>
+
+  </table>
+  </div>
+  </div>
+  </div>
+

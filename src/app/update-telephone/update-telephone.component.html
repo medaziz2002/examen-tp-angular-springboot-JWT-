@@ -1,0 +1,51 @@
+
+
+<div class="container">
+  <div>
+  <h2>Modifier un téléphone :</h2>
+  </div>
+  <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label >ID</label>
+
+      <input readonly type="text" [(ngModel)]="currenttelephone.idTelephone" name="idtele" class="form-control">
+      </div>
+  <div class="col-sm-4 col-md-4 col-lg-4" >
+  <label >Nom </label>
+  <input type="text"[(ngModel)]= "currenttelephone.nomTelephone"
+  name="nomProduit" class="form-control">
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-2">
+  <label >Prix</label>
+  <input type="number" [(ngModel)]= "currenttelephone.prixTelephone"
+  name="prixProduit" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label >Date création</label>
+
+<input type="date" [ngModel]="currenttelephone.dateCreation| date: 'yyyy-MM-dd'"
+(ngModelChange)=" currenttelephone.dateCreation= $event" name="dateCreation"
+class="form-control">
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4" >
+  <label >Societe de création </label>
+  <input type="text"[(ngModel)]= "currenttelephone.societe"
+  name="societe" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+  <label>type</label>
+    <select class="form-control form-control-lg" id="idType" name="idType" [(ngModel)]="upadatetypeid">
+    <option *ngFor="let typ of types" [value]="typ.idType" >
+    {{typ.nomtype}}
+    </option>
+    </select>
+    </div>
+<div class="mt-2">
+
+<button type="submit" (click)="updatetelephone()"  routerLink="/Mestelephone"
+class="btn btn-success">Modifer</button>
+
+</div>
+</form>
+
+</div>
